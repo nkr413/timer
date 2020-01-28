@@ -1,0 +1,182 @@
+$marun: maroon;
+$darkr: darkred;
+$proz: transparent;
+$cont-w: 602px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: white;
+  color: black;
+}
+
+* {
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  background: var(--proz);
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: firebrick;
+  border-radius: 0px;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+@mixin two-blc-display-param {
+  width: 100%;
+  border: 2px solid $proz;
+  display: flex;
+  flex-direction: row;
+  margin-left: -1px;
+}
+
+.content {
+  width: $cont-w;
+  border: 2px solid $proz;
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+.app-name {
+  background: $darkr;
+  color: white;
+  padding: 6px;
+  padding-left: 20px;
+  font-size: 20pt;
+  letter-spacing: 1px;
+  margin-bottom: -4px;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.time_blc {
+  @include two-blc-display-param;
+
+  div {
+    flex-grow: 1;
+    background: white;
+    color: black;
+    font-size: 20pt;
+    padding: 8px;
+    border-top: 2px solid $darkr;
+    border-left: 2px solid $proz;
+    border-right: 2px solid $proz;
+    border-bottom: 2px solid $proz;
+    text-align: center;
+    margin-left: -2px;
+
+    box-shadow: inset 0 0px 0 transparent;
+    letter-spacing: 1px;
+
+    &:hover {
+      box-shadow: inset 0 60px 0 $darkr;
+      color: white;
+    }
+  }
+}
+
+.app_buttons {
+  @include two-blc-display-param;
+  button {
+    flex-grow: 1;
+    width: 100px;
+    padding: 8px;
+    font-size: 18pt;
+    border: 2px solid $darkr;
+    background: $darkr;
+    margin-left: -2px;
+    text-align: center;
+
+    box-shadow: inset 0 53px 0 white;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: white;
+      box-shadow: inset 0 1px 0 $darkr;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+#result {
+  width: $cont-w;
+  height: 300px;
+  border: 2px solid $darkr;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 0px;
+
+  div {
+    width: $cont-w - 2;
+    border-top: 2px solid $marun;
+    border-right: 2px solid $proz;
+    border-bottom: 2px solid $proz;
+    padding: 10px;
+    font-size: 18pt;
+    margin-top: -2px;
+    margin-left: -2px;
+
+    span {
+      padding: 10px;
+      border: 2px solid $marun;
+      margin-left: -12px;
+      background: $marun;
+      color: white;
+    }
+  }
+}
+
+.result-blc-name {
+  background: white;
+  display: flex;
+  flex-direction: row;
+
+  div {
+    background: white;
+    padding: 6px;
+    border: 2px solid $proz;
+
+    letter-spacing: 2px;
+    font-size: 18pt;
+    flex-grow: 7;
+  }
+  button {
+    background: $darkr;
+    padding: 4px;
+    color: black;
+    width: 100px;
+    border: 2px solid $darkr;
+    margin-bottom: -2px;
+    letter-spacing: 1px;
+    font-size: 16pt;
+    flex-grow: 1;
+    position: relative;
+    left: 4px;
+    box-shadow: inset 0 53px 0 white;
+
+    &:hover {
+      color: white;
+      box-shadow: inset 0 1px 0 $darkr;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+// BUTTON SELECT EFFECTS
+#btn-slc-line {
+  width: 150px;
+  border: 1.5px solid $proz; 
+  margin-top: 4px;
+  position: relative;
+  left: 0px;
+}
